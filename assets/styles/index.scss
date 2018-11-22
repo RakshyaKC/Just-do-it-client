@@ -1,1 +1,77 @@
 @import '~bootstrap/scss/bootstrap';
+
+$border-color: #abbedd;
+$background-color: rgba(0, 0, 0, 0.2);
+$button-color: #cab9e6;
+$button-hover-color: #7345be;
+$color: #f1f1f1;
+$modal-color: #3ba3cc;
+
+body {
+  font-family: 'Vollkorn', serif;
+}
+
+#backgroundVideo {
+  bottom: 0;
+  min-height: 100%;
+  min-width: 100%;
+  position: fixed;
+  right: 0;
+}
+
+.to-start {
+  background: $background-color;
+  bottom: 0;
+  color: $color;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+}
+
+.modal-dialog {
+  background-color: $background-color;
+  margin: 15% auto;
+  // 15% from the top and centered
+  padding: 20px;
+  width: 30%;
+}
+
+.forms {
+  align-content: space-between;
+  align-self: center;
+  display: inline-flex;
+  font-family: 'Vollkorn', serif;
+  justify-content: space-between;
+}
+
+// #authedView {
+//   display: none;
+// }
+//
+// #unAuthedView {
+//   display: block;
+// }
+
+h5 {
+  clear: both;
+  font-family: 'Vollkorn', serif;
+  text-align: center;
+}
+
+.btn-default {
+  align-content: center;
+  font-family: 'Vollkorn', serif;
+  justify-content: space-around;
+  margin: 0.2em;
+}
+
+h6 {
+  clear: both;
+  text-align: center;
+}
+
+.workout-video {
+  align-self: center;
+  height: 700;
+  width: 1000;
+}
