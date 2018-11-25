@@ -4,10 +4,9 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 
 const onSignUp = event => {
-  // console.log('About to prevent default refresh')
   event.preventDefault()
-  $('#userSignUp').modal('show')
   const data = getFormFields(event.target)
+  console.log(data)
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
@@ -15,7 +14,6 @@ const onSignUp = event => {
 
 const onSignIn = event => {
   event.preventDefault()
-  $('#userSignIn').modal('show')
   const data = getFormFields(event.target)
   api.signIn(data)
     .then(ui.signInSuccess)

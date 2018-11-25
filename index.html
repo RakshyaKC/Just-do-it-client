@@ -16,78 +16,84 @@
       <div id="unAuthedView">
         <!-- The video -->
         <video autoplay muted loop id="backgroundVideo">
-          <source src="backgroundVideo.mp4" type="video/mp4" alt="backgroundVideo">
+          <!-- <source src="backgroundVideo.mp4" type="video/mp4" alt="backgroundVideo"> -->
         </video>
 
         <div class="to-start">
           <h4>Let's get you started</h4>
+          <!-- sign up form-->
+          <div class="btn-group dropup">
+            <form id="sign-up" class="forms">
+              <button type="button" class="btn btn-default dropup-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sign up
+              </button>
+              <div class="dropdown-menu">
+                <fieldset>
+                  <input name="credentials[email]" type="text" placeholder="Email address"><br>
+                  <input name="credentials[password]" type="password" placeholder="Password"><br>
+                  <input name="credentials[password_confirmation]" type="password" placeholder="Confirm password"><br>
+                  <button class="btn btn-info">Sign Up</button>
+                </fieldset>
+              </div>
+            </form>
+          </div>
+
+          <!-- sign in form -->
+          <div class="btn-group dropup">
+            <button type="button" class="btn btn-default dropup-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sign in
+            </button>
+            <div class="dropdown-menu">
+              <form id="sign-in" class="forms">
+                <fieldset>
+                  <input name="credentials[email]" type="text" placeholder="Email address"><br>
+                  <input name="credentials[password]" type="password" placeholder="Password"><br>
+                  <button class="btn btn-info">Sign in</button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
           <!-- Use a button to pause/play the video with JavaScript -->
-          <button class="btn btn-default" id="sign-up">Sign up</button>
-          <button class="btn btn-default" id="sign-in">Sign in</button>
         </div>
-        <!-- modals for sign in or signup -->
-
-        <div class="modal fade" id="userSignUp" role="dialog">
-          <div class="modal-dialog">
-              <div class="modal-body">
-                <form id="signup" class="forms">
-                  <fieldset>
-                    <input name="credentials[email]" type="text" placeholder="Email address"><br>
-                    <input name="credentials[password]" type="password" placeholder="Password"><br>
-                    <input name="credentials[password_confirmation]" type="password" placeholder="Confirm password"><br>
-                    <button class="btn btn-default">Sign Up</button>
-                  </fieldset>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              </div>
-          </div>
-        </div>
-
-        <!-- sign in form -->
-        <div class="modal fade" id="userSignIn" role="dialog">
-          <div class="modal-dialog">
-              <div class="modal-body">
-                <form id="signin" class="forms">
-                  <fieldset>
-                    <input name="credentials[email]" type="text" placeholder="Email address"><br>
-                    <input name="credentials[password]" type="password" placeholder="Password"><br>
-                    <button class="btn btn-default">Sign In</button>
-                  </fieldset>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              </div>
-          </div>
-        </div>
-        <!-- <form id="sign-in" class="forms">
-
-        </form> -->
       </div>
-      <h6 id="unAuthedMessage"></h6>
+      <h5 id="unAuthedMessage"></h5>
 
       <!-- once logged in-->
       <div id="authedView">
-        <nav>
-          <form id="sign-out" class="forms">
-            <button class="btn btn-info">Sign Out</button>
-          </form>
-          <form id="change-password" class="forms">
-              <fieldset>
-                <input type="password" name="passwords[old]" placeholder="Old password">
-                <input type="password" name="passwords[new]" placeholder="New password">
-                <button class="btn btn-info">Change Password</button>
-             </fieldset>
-          </form>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" id="user-profile">Account</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="change-password">
+                  Change password
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <form id="changepassword" class="forms">
+                    <fieldset>
+                      <input type="password" name="passwords[old]" placeholder="Old password">
+                      <input type="password" name="passwords[new]" placeholder="New password">
+                    </fieldset>
+                  </form>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="sign-out">Sign out</a>
+              </li>
+            </ul>
         </nav>
+
+        <!-- User time availability -->
         <h5>How long do you have today?</h5>
-        <button class="btn btn-info">30 minutes</button>
-        <button class="btn btn-info">45 minutes</button>
-        <button class="btn btn-info">60 minutes</button>
-        <button class="btn btn-info">75 minutes</button>
+        <div class="time-availability">
+          <button class="btn btn-info">30 minutes</button>
+          <button class="btn btn-info">45 minutes</button>
+          <button class="btn btn-info">60 minutes</button>
+        </div>
       </div>
+
+      <!-- Workout view -->
       <div id="startWorkout">
         <h5>Take a deep breath and yoga!</h5>
         <iframe class="workout-video" width="700" height="450" src="https://www.youtube.com/watch?v=YbAYMQC_ZaE"></iframe>

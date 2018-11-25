@@ -1,13 +1,10 @@
 @import '~bootstrap/scss/bootstrap';
 
-$border-color: #abbedd;
-$background-color: rgba(0, 0, 0, 0.2);
-$button-color: #cab9e6;
-$button-hover-color: #7345be;
-$color: #f1f1f1;
-$modal-color: #3ba3cc;
+$background-color: #d8cfcf;
+$overlay-color: rgba(220, 244, 244, 0.6);
 
 body {
+  background-color: $background-color;
   font-family: 'Vollkorn', serif;
 }
 
@@ -20,28 +17,16 @@ body {
 }
 
 .to-start {
-  background: $background-color;
+  background: $overlay-color;
   bottom: 0;
-  color: $color;
-  padding: 20px;
+  padding: 10px;
   position: fixed;
   width: 100%;
 }
 
-.modal-dialog {
-  background-color: $background-color;
-  margin: 15% auto;
-  // 15% from the top and centered
-  padding: 20px;
-  width: 30%;
-}
-
 .forms {
-  align-content: space-between;
-  align-self: center;
-  display: inline-flex;
   font-family: 'Vollkorn', serif;
-  justify-content: space-between;
+  padding: 0.5em;
 }
 
 // #authedView {
@@ -58,6 +43,14 @@ h5 {
   text-align: center;
 }
 
+.dropup:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 .btn-default {
   align-content: center;
   font-family: 'Vollkorn', serif;
@@ -65,13 +58,8 @@ h5 {
   margin: 0.2em;
 }
 
-h6 {
-  clear: both;
-  text-align: center;
-}
-
 .workout-video {
   align-self: center;
-  height: 700;
-  width: 1000;
+  display: flex;
+  margin: auto;
 }

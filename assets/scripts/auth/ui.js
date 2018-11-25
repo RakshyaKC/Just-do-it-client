@@ -17,27 +17,26 @@ const resetChangePassword = () => {
 }
 
 const signUpSuccess = data => {
-  // needs to redirect to sign in
   $('#unAuthedMessage').html(`Sign up was successful. Sign in to start playing!`)
   resetSignUp()
 }
 
-const signUpFailure = () => {
+const signUpFailure = (error) => {
   $('#unAuthedMessage').html(`Sorry, sign up was unsuccessful. Try again.`)
-  // console.log('signUpFailure ran. Error is :', error)
+  console.log('signUpFailure ran. Error is :', error)
   resetSignUp()
 }
 
 const signInSuccess = data => {
   store.user = data.user
-  // console.log('signInSuccess ran. Data is :', data)
+  console.log('signInSuccess ran. Data is :', data)
   $('#unAuthedMessage').html('')
   resetSignIn()
   $('#all-games-IDs').html(` `)
 }
-const signInFailure = () => {
+const signInFailure = (error) => {
   $('#unAuthedMessage').html(`Sorry, sign in was unsuccessful. Try again.`)
-  // console.log('signInFailure ran. Error is :', error)
+  console.log('signInFailure ran. Error is :', error)
   resetSignIn()
 }
 
