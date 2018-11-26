@@ -29,14 +29,6 @@ body {
   padding: 0.5em;
 }
 
-// #authedView {
-//   display: none;
-// }
-//
-// #unAuthedView {
-//   display: block;
-// }
-
 h5 {
   clear: both;
   font-family: 'Vollkorn', serif;
@@ -51,11 +43,19 @@ h5 {
   display: block;
 }
 
-.btn-default {
-  align-content: center;
-  font-family: 'Vollkorn', serif;
-  justify-content: space-around;
-  margin: 0.2em;
+.dropdown:hover .dropdown-changepassword {
+  display: block;
+}
+
+.time-availability {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  margin: 0.5em;
+}
+
+.btn-info {
+  margin: 0.5em;
 }
 
 .workout-video {
@@ -63,3 +63,11 @@ h5 {
   display: flex;
   margin: auto;
 }
+
+// #authedView {
+//   display: none;
+// }
+//
+// #unAuthedView {
+//   display: block;
+// }

@@ -29,24 +29,23 @@ const signUpFailure = (error) => {
 
 const signInSuccess = data => {
   store.user = data.user
-  console.log('signInSuccess ran. Data is :', data)
+  // console.log('signInSuccess ran. Data is :', data)
   $('#unAuthedMessage').html('')
   resetSignIn()
-  $('#all-games-IDs').html(` `)
 }
-const signInFailure = (error) => {
+const signInFailure = () => {
   $('#unAuthedMessage').html(`Sorry, sign in was unsuccessful. Try again.`)
-  console.log('signInFailure ran. Error is :', error)
+  // console.log('signInFailure ran. Error is :', error)
   resetSignIn()
 }
 
 const changePasswordSuccess = data => {
-  // console.log('changePasswordSuccess ran. Data is :', data)
+  console.log('changePasswordSuccess ran. Data is :', data)
   $('#authedMessage').html(`Congratulations! Password was changed successfully!`)
   resetChangePassword()
 }
-const changePasswordFailure = () => {
-  // console.log('changePasswordFailure ran. Error is :', error)
+const changePasswordFailure = error => {
+  console.log('changePasswordFailure ran. Error is :', error)
   $('#authedMessage').html(`Sorry password couldn't be changed. Try again!`)
   resetChangePassword()
 }

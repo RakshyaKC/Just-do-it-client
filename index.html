@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Yoga-along for the busy!</title>
+      <title>Yoga for the busy!</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -23,25 +23,24 @@
           <h4>Let's get you started</h4>
           <!-- sign up form-->
           <div class="btn-group dropup">
-            <form id="sign-up" class="forms">
               <button type="button" class="btn btn-default dropup-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Sign up
+                Create an account
               </button>
               <div class="dropdown-menu">
+                <form id="sign-up" class="forms">
                 <fieldset>
                   <input name="credentials[email]" type="text" placeholder="Email address"><br>
                   <input name="credentials[password]" type="password" placeholder="Password"><br>
                   <input name="credentials[password_confirmation]" type="password" placeholder="Confirm password"><br>
                   <button class="btn btn-info">Sign Up</button>
                 </fieldset>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
-
           <!-- sign in form -->
           <div class="btn-group dropup">
             <button type="button" class="btn btn-default dropup-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Sign in
+              Have an account?
             </button>
             <div class="dropdown-menu">
               <form id="sign-in" class="forms">
@@ -55,29 +54,35 @@
           </div>
           <!-- Use a button to pause/play the video with JavaScript -->
         </div>
-      </div>
+    </div>
       <h5 id="unAuthedMessage"></h5>
 
       <!-- once logged in-->
       <div id="authedView">
         <nav class="navbar navbar-expand-lg navbar-light">
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" id="user-profile">Account</a>
-              </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="change-password">
-                  Change password
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="account">
+                  Account
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <form id="changepassword" class="forms">
-                    <fieldset>
-                      <input type="password" name="passwords[old]" placeholder="Old password">
-                      <input type="password" name="passwords[new]" placeholder="New password">
-                    </fieldset>
-                  </form>
+                  <ul id="user-account">
+                      <li id="username">Username</li>
+                      <li id="fitness-level">Fitness level</li>
+                      <li id="account-age">Account age</li>
+                      <li class="nav-item dropdown">
+                          <form id="changepassword" class="forms">
+                            <fieldset>
+                              <input type="password" name="passwords[old]" placeholder="Old password">
+                              <input type="password" name="passwords[new]" placeholder="New password">
+                              <button class="btn btn-info">Change password</button>
+                            </fieldset>
+                          </form>
+                      </li>
+                  </ul>
                 </div>
               </li>
+              <!--Sign out link -->
               <li class="nav-item">
                 <a class="nav-link" id="sign-out">Sign out</a>
               </li>
