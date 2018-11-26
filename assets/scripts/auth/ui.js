@@ -17,7 +17,7 @@ const resetChangePassword = () => {
 }
 
 const signUpSuccess = data => {
-  $('#unAuthedMessage').html(`Sign up was successful. Sign in to start playing!`)
+  $('#unAuthedMessage').html(`Sign up was successful. Sign in to start yoga-along!`)
   resetSignUp()
 }
 
@@ -32,6 +32,7 @@ const signInSuccess = data => {
   // console.log('signInSuccess ran. Data is :', data)
   $('#unAuthedMessage').html('')
   resetSignIn()
+  $('#username').html(data.user.email)
 }
 const signInFailure = () => {
   $('#unAuthedMessage').html(`Sorry, sign in was unsuccessful. Try again.`)
