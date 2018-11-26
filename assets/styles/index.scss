@@ -16,7 +16,7 @@ body {
   right: 0;
 }
 
-.to-start {
+#to-start {
   background: $overlay-color;
   bottom: 0;
   padding: 10px;
@@ -72,6 +72,9 @@ h5 {
   margin: auto;
 }
 
+#navbar {
+  display: none;
+}
 // #authedView {
 //   display: none;
 // }

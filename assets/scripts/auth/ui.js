@@ -29,8 +29,10 @@ const signUpFailure = (error) => {
 
 const signInSuccess = data => {
   store.user = data.user
-  console.log('signInSuccess ran. Data is :', data)
+  // console.log('signInSuccess ran. Data is :', data)
   $('#unAuthedMessage').html('')
+  $('#navbar').show()
+  $('#to-start').hide()
   resetSignIn()
   $('#username').html(data.user.email)
 }
@@ -52,9 +54,11 @@ const changePasswordFailure = error => {
 }
 
 const signOutSuccess = () => {
-  console.log('signOutSuccess ran.')
+  // console.log('signOutSuccess ran.')
   store.user.token = []
   $('#username').html('Username')
+  $('#navbar').hide()
+  $('#to-start').show()
 }
 const signOutFailure = (error) => {
   $('#authedMessage').html(`Sorry, sign out was unsuccessful. Try again.`)
