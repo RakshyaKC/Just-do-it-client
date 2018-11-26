@@ -32,6 +32,7 @@ body {
 h5 {
   clear: both;
   font-family: 'Vollkorn', serif;
+  justify-content: center;
   text-align: center;
 }
 
@@ -48,14 +49,21 @@ h5 {
 }
 
 .time-availability {
-  align-self: center;
+  align-content: center;
+  clear: both;
+  display: flex;
+}
+
+#time {
+  align-content: center;
   display: flex;
   justify-content: center;
-  margin: 0.5em;
 }
 
 .btn-info {
-  margin: 0.5em;
+  align-content: center;
+  display: flex;
+  margin: 1em;
 }
 
 .workout-video {
