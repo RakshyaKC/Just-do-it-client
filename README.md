@@ -2,16 +2,18 @@ Just Do it Client
 
 Authorization
 * User can sign up.
-*** User shouldn't have to sign in right after signing up. Sign up should generate authorization token.
 * User can sign in.
-*** User can change password.
-*** User can sign out.
+* User can change password.
+* User can sign out.
+*** User shouldn't have to sign in right after signing up. Sign up should generate authorization token.
+
 
 User account
 *** User can enter theit fitness level.
-*** User can see their username.
+* User can see their username.
 *** User can see how old their account is.
 *** User can update their fitness level.
+*** User can delete their account.
 
 Video access
 *** User can enter their time availability.

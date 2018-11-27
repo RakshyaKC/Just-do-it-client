@@ -14,8 +14,9 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
+  $('#delete').on('click', authEvents.onDeleteAccount)
   // video access event handlers
   $('#thirty-min').on('click', videoEvents.onThirtyMin)
-  // $('#fortyfive-min').on('submit', videoEvents.onFortyfiveMin)
-  // $('#sixty-min').on('submit', videoEvents.onSixtyMin)
+  $('#fortyfive-min').on('click', videoEvents.onFortyfiveMin)
+  $('#sixty-min').on('click', videoEvents.onSixtyMin)
 })

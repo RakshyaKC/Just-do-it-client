@@ -79,7 +79,7 @@
                             </fieldset>
                           </form>
                       </li>
-                      <li id="delete-account">Delete account</li>
+                      <li id="delete">Delete account</li>
                   </ul>
                 </div>
               </li>
@@ -103,9 +103,24 @@
       <!-- Workout view -->
       <div id="startWorkout">
         <h5>Take a deep breath and yoga!</h5>
-        <!-- <iframe class="workout-video" width="700" height="450"></iframe> -->
+        <iframe id="workout-video" width="700" height="450" src=""></iframe>
       </div>
-</div>
+      <!--Modals  -->
+      <div class="modal" tabindex="-1" role="dialog" id="delete-modal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <h5>Are you sure you want to delete your account?</h5>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-info" id="delete-account">Delete</button>
+              <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
 
-    </body>
+
+    </div>
+  </body>
 </html>

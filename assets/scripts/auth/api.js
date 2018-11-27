@@ -39,9 +39,23 @@ const signOut = () => {
   })
 }
 
+const deleteAccount = () => {
+  return $.ajax({
+    url: config.apiUrl + `/delete`,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+// Data is
+// user: {id: 1, email: "rk@rk.com", token:""}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  deleteAccount
 }

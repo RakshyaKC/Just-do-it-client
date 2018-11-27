@@ -36,9 +36,18 @@ const onSignOut = event => {
     .catch(ui.signOutFailure)
 }
 
+const onDeleteAccount = event => {
+  event.preventDefault()
+  $('#delete-modal').modal('show')
+  api.deleteAccount()
+    .then(ui.deleteSuccess)
+    .catch(ui.deleteFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onDeleteAccount
 }

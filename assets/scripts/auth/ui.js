@@ -21,15 +21,15 @@ const signUpSuccess = data => {
   resetSignUp()
 }
 
-const signUpFailure = (error) => {
+const signUpFailure = () => {
   $('#unAuthedMessage').html(`Sorry, sign up was unsuccessful. Try again.`)
-  console.log('signUpFailure ran. Error is :', error)
+  // console.log('signUpFailure ran. Error is :', error)
   resetSignUp()
 }
 
 const signInSuccess = data => {
   store.user = data.user
-  // console.log('signInSuccess ran. Data is :', data)
+  console.log('signInSuccess ran. Data is :', data)
   $('#unAuthedMessage').html('')
   $('#navbar').show()
   $('#to-start').hide()
@@ -43,12 +43,12 @@ const signInFailure = () => {
 }
 
 const changePasswordSuccess = data => {
-  console.log('changePasswordSuccess ran. Data is :', data)
+  // console.log('changePasswordSuccess ran. Data is :', data)
   $('#authedMessage').html(`Congratulations! Password was changed successfully!`)
   resetChangePassword()
 }
-const changePasswordFailure = error => {
-  console.log('changePasswordFailure ran. Error is :', error)
+const changePasswordFailure = () => {
+  // console.log('changePasswordFailure ran. Error is :', error)
   $('#authedMessage').html(`Sorry password couldn't be changed. Try again!`)
   resetChangePassword()
 }
@@ -60,10 +60,12 @@ const signOutSuccess = () => {
   $('#navbar').hide()
   $('#to-start').show()
 }
+
 const signOutFailure = (error) => {
   $('#authedMessage').html(`Sorry, sign out was unsuccessful. Try again.`)
   console.log('signOutFailure ran. Error is :', error)
 }
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
