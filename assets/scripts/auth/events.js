@@ -4,7 +4,6 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 const store = require('../store.js')
 
-
 const onSignUp = event => {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -17,7 +16,7 @@ const onSignUp = event => {
 const onSignIn = event => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
+  // console.log(data)
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
@@ -50,6 +49,8 @@ const onDeleteAccount = event => {
 const onUpdateFitness = event => {
   console.log(store.user.fitness)
   console.log('function onUpdateFitnes')
+  const option = $('#option2').text()
+  console.log(option)
   if (store.user.fitness === $('#option2').text()) {
     api.updateFitness()
       .then(ui.updateFitnessSuccess)

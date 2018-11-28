@@ -85,34 +85,28 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <ul id="user-account">
                       <li id="username">Username</li>
+                      <li>Update fitness level here</li>
                       <form>
-                        <div class="form-group">
-                          <li>Update fitness level here</li>
-                          <select class="form-control" id="update-fitness">
-                            <option id="option1">All levels</option>
-                            <option id="option2">Intermediate</option>
-                          </select>
-                        </div>
+                        <input list="fitness" name="fitness">
+                          <datalist id="update-fitness">
+                            <option value="All levels">
+                            <option value="Intermediate">
+                            <!-- <option id="option1" name="fitness[old]" value="All levels"></option>
+                            <option id="option2" name="fitness[new]" value="Intermediate"></option> -->
+                          </datalist>
+                          <input type="submit">
                       </form>
-
                       <li id="account-age">Account age</li>
                       <li class="nav-item dropdown">
                           <form id="change-password" class="forms">
-                              <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input type="password" name="passwords[old]" placeholder="Old password" class="form-control">
-                              </div>
-                              <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                <input type="password" name="passwords[new]" placeholder="New password" class="form-control">
-                              </div>
-                              <button class="btn btn-info">Change password</button>
+                            <input type="password" name="passwords[old]" placeholder="Old password" class="form-control">
+                            <input type="password" name="passwords[new]" placeholder="New password" class="form-control">
+                            <button class="btn btn-info">Change password</button>
                           </form>
                       </li>
-                      <li id="delete">Delete account</li>
+                      <button class="btn btn-info" id="delete">Delete account</button>
                   </ul>
                 </div>
-              </li>
               <!--Sign out link -->
               <li class="nav-item">
                 <a class="nav-link" id="sign-out">Sign out</a>
@@ -148,9 +142,9 @@
             </div>
           </div>
         </div>
+      </div>
     </div>
 
 
-    </div>
   </body>
 </html>

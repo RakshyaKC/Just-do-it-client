@@ -49,14 +49,14 @@ const deleteAccount = () => {
   })
 }
 
-const updateFitness = (event, data) => {
+const updateFitness = (option) => {
   return $.ajax({
     url: config.apiUrl + `/update-fitness`,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data
+    option
   })
 }
 

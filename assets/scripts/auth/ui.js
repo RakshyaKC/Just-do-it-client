@@ -36,10 +36,17 @@ const signInSuccess = data => {
   console.log('signInSuccess ran. Data is :', data)
   $('#username').html(`Welcome back ${data.user.email}`)
   $('#update-fitness').find(':selected').text(data.user.fitness)
+  const time = Date.parse(store.user.created_at)
+  const timePassed = Date.now() - time
+  const numDays = Math.round(timePassed / (24 * 60 * 60 * 1000))
+  $('#account-age').html(`You started this journey ${numDays} days ago.`)
   if (data.user.fitness === 'Intermediate') {
     $('#option1').text('Intermediate')
     $('#option2').text('All levels')
   } else if (data.user.fitness === 'All levels') {
+    $('#option1').text('All levels')
+    $('#option2').text('Intermediate')
+  } else {
     $('#option1').text('All levels')
     $('#option2').text('Intermediate')
   }

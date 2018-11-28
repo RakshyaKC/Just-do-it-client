@@ -1,7 +1,7 @@
 'user strict'
 // const store = require('../store.js')
 
-const thirtyMinSuccess = function (data) {
+const thirtyMinAllSuccess = function (data) {
   console.log('watch this 30 min video')
   // will need to randomly select one of the object
   console.log(data.videos)
@@ -9,8 +9,8 @@ const thirtyMinSuccess = function (data) {
   console.log(url)
   $('#workout-video').attr('src', url)
 }
-const thirtyMinFailure = (error) => {
-  console.log('thirtyMinFailure ran. Error is :', error)
+const thirtyMinAllFailure = (error) => {
+  console.log('thirtyMinAllFailure ran. Error is :', error)
 }
 const fortyfiveMinSuccess = (data) => {
   console.log(`let's watch the 45 min video`)
@@ -28,8 +28,8 @@ const sixtyMinFailure = (error) => {
 }
 
 module.exports = {
-  thirtyMinSuccess,
-  thirtyMinFailure,
+  thirtyMinAllSuccess,
+  thirtyMinAllFailure,
   fortyfiveMinSuccess,
   fortyfiveMinFailure,
   sixtyMinSuccess,

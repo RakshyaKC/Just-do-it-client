@@ -1,6 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Vollkorn:400,600');
 
 $background-color: #d8cfcf;
+$font-color: #6c7d93;
 $overlay-color: rgba(220, 244, 244, 0.6);
 
 body {
@@ -38,8 +40,17 @@ body {
   position: absolute;
 }
 
-h5 {
+h4,
+li {
+  color: $font-color;
+  font-family: 'Vollkorn', serif;
+  padding-right: 0.5em;
+}
+
+h5,
+p {
   clear: both;
+  color: $font-color;
   font-family: 'Vollkorn', serif;
   justify-content: center;
   text-align: center;
@@ -53,9 +64,11 @@ h5 {
   display: block;
 }
 
-.dropdown:hover .dropdown-changepassword {
+.dropdown-changepassword:hover {
   display: block;
 }
+
+
 
 .time-availability {
   align-content: center;
@@ -82,7 +95,9 @@ h5 {
 }
 
 #navbar {
+  color: $font-color;
   display: none;
+  font-family: 'Vollkorn', serif;
 }
 // #authedView {
 //   display: none;
