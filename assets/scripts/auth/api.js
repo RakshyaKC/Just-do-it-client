@@ -49,13 +49,22 @@ const deleteAccount = () => {
   })
 }
 
-// Data is
-// user: {id: 1, email: "rk@rk.com", token:""}
+const updateFitness = (event, data) => {
+  return $.ajax({
+    url: config.apiUrl + `/update-fitness`,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
 
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
-  deleteAccount
+  deleteAccount,
+  updateFitness
 }

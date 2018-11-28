@@ -2,6 +2,8 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
+const store = require('../store.js')
+
 
 const onSignUp = event => {
   event.preventDefault()
@@ -46,7 +48,13 @@ const onDeleteAccount = event => {
 }
 
 const onUpdateFitness = event => {
-  console.log('function onUpdateFitness')
+  console.log(store.user.fitness)
+  console.log('function onUpdateFitnes')
+  if (store.user.fitness === $('#option2').text()) {
+    api.updateFitness()
+      .then(ui.updateFitnessSuccess)
+      .catch(ui.updateFitnessFailure)
+  }
 }
 
 module.exports = {

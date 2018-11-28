@@ -75,6 +75,21 @@ const signOutFailure = (error) => {
   console.log('signOutFailure ran. Error is :', error)
 }
 
+const deleteSuccess = () => {
+  console.log('deleteSuccess ran')
+}
+const deleteFailure = () => {
+  console.log('deleteFailure ran')
+}
+
+const updateFitnessSuccess = () => {
+  console.log('updateFitnessSuccess ran')
+}
+
+const updateFitnessFailure = () => {
+  console.log('updateFitnessFailure ran')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -83,5 +98,9 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  deleteSuccess,
+  deleteFailure,
+  updateFitnessSuccess,
+  updateFitnessFailure
 }
