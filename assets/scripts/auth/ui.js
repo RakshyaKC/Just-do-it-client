@@ -29,13 +29,22 @@ const signUpFailure = () => {
 
 const signInSuccess = data => {
   store.user = data.user
-  console.log('signInSuccess ran. Data is :', data)
+  resetSignIn()
   $('#unAuthedMessage').html('')
   $('#navbar').show()
   $('#to-start').hide()
-  resetSignIn()
-  $('#username').html(data.user.email)
+  console.log('signInSuccess ran. Data is :', data)
+  $('#username').html(`Welcome back ${data.user.email}`)
+  $('#update-fitness').find(':selected').text(data.user.fitness)
+  if (data.user.fitness === 'Intermediate') {
+    $('#option1').text('Intermediate')
+    $('#option2').text('All levels')
+  } else if (data.user.fitness === 'All levels') {
+    $('#option1').text('All levels')
+    $('#option2').text('Intermediate')
+  }
 }
+
 const signInFailure = () => {
   $('#unAuthedMessage').html(`Sorry, sign in was unsuccessful. Try again.`)
   // console.log('signInFailure ran. Error is :', error)

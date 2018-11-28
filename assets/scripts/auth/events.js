@@ -15,6 +15,7 @@ const onSignUp = event => {
 const onSignIn = event => {
   event.preventDefault()
   const data = getFormFields(event.target)
+  console.log(data)
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
@@ -44,10 +45,15 @@ const onDeleteAccount = event => {
     .catch(ui.deleteFailure)
 }
 
+const onUpdateFitness = event => {
+  console.log('function onUpdateFitness')
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
-  onDeleteAccount
+  onDeleteAccount,
+  onUpdateFitness
 }

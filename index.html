@@ -28,13 +28,26 @@
               </button>
               <div class="dropdown-menu">
                 <form id="sign-up" class="forms">
-                <fieldset>
-                  <input name="credentials[email]" type="text" placeholder="Email address"><br>
-                  <input name="credentials[password]" type="password" placeholder="Password"><br>
-                  <input name="credentials[password_confirmation]" type="password" placeholder="Confirm password"><br>
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input name="credentials[email]" type="text" placeholder="Email address" class="form-control">
+                  </div>
+                  <div class="input-group">
+                    <input name="credentials[password]" type="password" placeholder="Password" class="form-control">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                  </div>
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="glyphicon glyphicon-lock"></i>
+                    </span>
+                    <input name="credentials[password_confirmation]" type="password" placeholder="Confirm password" class="form-control">
+                  </div>
+                  <div class="input-group">
+                    <input name="credentials[fitness]" type="text" placeholder="Fitness level" class="form-control">
+                  </div>
+                  <p>Enter 'All levels' or 'Intermediate'</p>
                   <button class="btn btn-info">Sign Up</button>
-                </fieldset>
-              </form>
+                </form>
             </div>
           </div>
           <!-- sign in form -->
@@ -44,11 +57,15 @@
             </button>
             <div class="dropdown-menu">
               <form id="sign-in" class="forms">
-                <fieldset>
-                  <input name="credentials[email]" type="text" placeholder="Email address"><br>
-                  <input name="credentials[password]" type="password" placeholder="Password"><br>
-                  <button class="btn btn-info">Sign in</button>
-                </fieldset>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                  <input name="credentials[email]" type="text" placeholder="Email address" class="form-control">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                  <input name="credentials[password]" type="password" placeholder="Password" class="form-control">
+                </div>
+                <button class="btn btn-info">Sign in</button>
               </form>
             </div>
           </div>
@@ -68,15 +85,28 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <ul id="user-account">
                       <li id="username">Username</li>
-                      <li id="fitness-level">Fitness level</li>
+                      <form>
+                        <div class="form-group">
+                          <li>Update fitness level here</li>
+                          <select class="form-control" id="update-fitness">
+                            <option id="option1">All levels</option>
+                            <option id="option2">Intermediate</option>
+                          </select>
+                        </div>
+                      </form>
+
                       <li id="account-age">Account age</li>
                       <li class="nav-item dropdown">
                           <form id="change-password" class="forms">
-                            <fieldset>
-                              <input type="password" name="passwords[old]" placeholder="Old password">
-                              <input type="password" name="passwords[new]" placeholder="New password">
+                              <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input type="password" name="passwords[old]" placeholder="Old password" class="form-control">
+                              </div>
+                              <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input type="password" name="passwords[new]" placeholder="New password" class="form-control">
+                              </div>
                               <button class="btn btn-info">Change password</button>
-                            </fieldset>
                           </form>
                       </li>
                       <li id="delete">Delete account</li>

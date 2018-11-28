@@ -29,6 +29,15 @@ body {
   padding: 0.5em;
 }
 
+.input-group {
+  position: relative;
+}
+
+.glyphicon {
+  padding: 10px;
+  position: absolute;
+}
+
 h5 {
   clear: both;
   font-family: 'Vollkorn', serif;

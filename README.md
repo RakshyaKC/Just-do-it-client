@@ -9,14 +9,14 @@ Authorization
 
 
 User account
-*** User can enter theit fitness level.
+*** User can enter their fitness level.
 * User can see their username.
 *** User can see how old their account is.
 *** User can update their fitness level.
 *** User can delete their account.
 
 Video access
-*** User can enter their time availability.
+* User can enter their time availability.
 *** User can see a youtube video link.
 *** Maybe user can play the video in the app itself.
 *** User will not see the same video twice ....in a row(if the database is made manually)
@@ -29,3 +29,9 @@ The videoDuration parameter filters video search results based on their duration
 The videoEmbeddable parameter lets you to restrict a search to only videos that can be embedded into a webpage. If you specify a value for this parameter, you must also set the type parameter's value to video. (string)
 
 https://developers.google.com/apis-explorer/#p/youtube/v3/youtube.search.list?part=snippet&maxResults=25&q=surfing
+
+
+<!-- Why is my glyphicon not workinh? -->
+
+Commit
+* bootstrap styling for sign up/sign in forms
