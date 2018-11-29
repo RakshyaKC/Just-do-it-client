@@ -16,6 +16,10 @@ body {
   // width: 100%;
 }
 
+#authedView {
+  display: none;
+}
+
 .video-container {
   #bgVideo {
     bottom: 0;
@@ -43,12 +47,8 @@ body {
   position: relative;
 }
 
-.glyphicon {
-  padding: 10px;
-  position: absolute;
-}
-
 h4,
+h6,
 li {
   color: $font-color;
   font-family: 'Vollkorn', serif;
@@ -71,12 +71,6 @@ p {
 .dropdown:hover .dropdown-menu {
   display: block;
 }
-
-.dropdown-changepassword:hover {
-  display: block;
-}
-
-
 
 .time-availability {
   align-content: center;
@@ -104,13 +98,17 @@ p {
 
 #navbar {
   color: $font-color;
-  display: none;
   font-family: 'Vollkorn', serif;
 }
-// #authedView {
-//   display: none;
-// }
-//
-// #unAuthedView {
-//   display: block;
-// }
+
+#authedView {
+  display: none;
+}
+
+#unAuthedView {
+  display: block;
+}
+
+#startWorkout {
+  display: none;
+}

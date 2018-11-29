@@ -9,11 +9,11 @@ Authorization
 
 
 User account
-*** User can enter their fitness level.
+* User can enter their fitness level.
 * User can see their username.
-*** User can see how old their account is.
-*** User can update their fitness level.
-*** User can delete their account.
+* User can see how old their account is.
+* User can update their fitness level.
+* User can delete their account.
 
 Video access
 * User can enter their time availability.
@@ -21,7 +21,9 @@ Video access
 *** Maybe user can play the video in the app itself.
 *** User will not see the same video twice ....in a row(if the database is made manually)
 
-YouTube api
+
+FUTURE FEATURES
+Integration of YouTube api
 * videoDuration
 The videoDuration parameter filters video search results based on their duration. If you specify a value for this parameter, you must also set the type parameter's value to video. (string)
 
@@ -30,8 +32,20 @@ The videoEmbeddable parameter lets you to restrict a search to only videos that 
 
 https://developers.google.com/apis-explorer/#p/youtube/v3/youtube.search.list?part=snippet&maxResults=25&q=surfing
 
+11/29
+* Delete input box from account dropdown
+* Delete update button
+* Moved change password out of account drop down
+* Disabled background gif upon sign in
+* Make sure front end is interacting with backend upon deployment
+* Changed auth and unauth view
 
-<!-- Why is my glyphicon not workinh? -->
 
-Commit
-* bootstrap styling for sign up/sign in forms
+To do
+*** Feedback for change password, unsuccessful sign in, unsuccessful sign out, update fitness
+*** Maybe use bootstrap notify for authedMessage
+*** Start workout only when api calls have been made
+*** embed json files
+*** Add 2-3 resources for the 6 video types. Total (12-18)
+*** Add ui success and failure for all video events. Total - 12 functions
+*** Remove all console.logs

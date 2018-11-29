@@ -15,15 +15,13 @@
       <!-- before login -->
       <div id="unAuthedView">
         <!-- The video -->
-        <!-- <video autoplay muted loop id="backgroundVideo">
-          <source src="backgroundVideo.gif" type="video/mp4" id="bgVideo">
-        </video> -->
         <div class="video-container">
-          <img src='backgroundVideo.gif' id='bgVideo' alt="nice-video"/>
+            <img src='backgroundVideo.gif' id='bgVideo' alt="nice-video"/>
         </div>
 
         <div id="to-start">
           <h4>Let's get you started</h4>
+          <h6 id="unAuthedMessage"></h6>
           <!-- sign up form-->
           <div class="btn-group dropup">
               <button type="button" class="btn btn-default dropup-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -56,10 +54,10 @@
           <!-- Use a button to pause/play the video with JavaScript -->
         </div>
     </div>
-      <h5 id="unAuthedMessage"></h5>
 
-      <!-- once logged in-->
+    <!-- once logged in-->
       <div id="authedView">
+        <h5 id="authedMessage"></h5>
         <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
@@ -71,25 +69,29 @@
                       <li id="username">Username</li>
                       <li id="fitness-level">Your fitness level is </li>
                       <form id="update-fitness">
-                        <input list="fitness" name="fitness">
                         <select id="select-fitness">
                           <option id="option1" value="All levels">All levels</option>
                           <option id="option2" value="Intermediate">Intermediate</option>
                         </select>
-                        <button class="btn btn-info">Update</button>
                       </form>
 
                       <li id="account-age"></li>
-                      <li class="nav-item dropdown">
-                          <form id="change-password" class="forms">
-                            <input type="password" name="passwords[old]" placeholder="Old password" class="form-control">
-                            <input type="password" name="passwords[new]" placeholder="New password" class="form-control">
-                            <button class="btn btn-info">Change password</button>
-                          </form>
-                      </li>
                       <button class="btn btn-info" id="delete">Delete account</button>
                   </ul>
                 </div>
+              <!--Change password link -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="password">
+                  Change password
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <form id="change-password" class="forms">
+                    <input type="password" name="passwords[old]" placeholder="Old password" class="form-control">
+                    <input type="password" name="passwords[new]" placeholder="New password" class="form-control">
+                    <button class="btn btn-info">Change password</button>
+                  </form>
+                </div>
+              </li>
               <!--Sign out link -->
               <li class="nav-item">
                 <a class="nav-link" id="sign-out">Sign out</a>
@@ -112,6 +114,7 @@
         <h5>Take a deep breath and yoga!</h5>
         <!-- <iframe id="workout-video" width="700" height="450" src=""></iframe> -->
         <iframe id="workout-video" width="560" height="315" src="https://www.youtube.com/embed/GLy2rYHwUqY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/7ciS93shMNQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <!--Modals  -->
       <div class="modal" tabindex="-1" role="dialog" id="delete-modal">

@@ -46,17 +46,19 @@ const onDeleteAccount = event => {
 }
 
 const onUpdateFitness = event => {
-  console.log(event)
+  // console.log(event)
   event.preventDefault()
   console.log(store.user.fitness)
   console.log(event.target.value)
   // console.log('function onUpdateFitnes')
-  // const option = $('#option2').text()
-  // console.log(option)
-  // if (store.user.fitness === $('#option2').text()) {
-  api.updateFitness(event.target.value)
-    .then(ui.updateFitnessSuccess)
-    .catch(ui.updateFitnessFailure)
+  const option = $('#option2').text()
+  console.log(option)
+  // if store.user.fitness is not equal to option 2
+  if (store.user.fitness !== $('#option2').text()) {
+    api.updateFitness(event.target.value)
+      .then(ui.updateFitnessSuccess)
+      .catch(ui.updateFitnessFailure)
+  }
 }
 
 module.exports = {

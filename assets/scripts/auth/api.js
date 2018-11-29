@@ -50,6 +50,7 @@ const deleteAccount = () => {
 }
 
 const updateFitness = (fitnessLevel) => {
+  console.log('api update fitness running')
   return $.ajax({
     url: config.apiUrl + `/change-fitness`,
     method: 'PATCH',

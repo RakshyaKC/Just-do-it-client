@@ -28,7 +28,7 @@ const signUpFailure = () => {
 }
 
 const hideBackgroundVideo = () => {
-  $('bgVideo').remove()
+  $('#bgVideo').css('display', 'none')
 }
 
 const signInSuccess = data => {
@@ -36,9 +36,10 @@ const signInSuccess = data => {
   resetSignIn()
   hideBackgroundVideo()
   $('#unAuthedMessage').html('')
-  $('#navbar').show()
-  $('#to-start').hide()
-  console.log('signInSuccess ran. Data is :', data)
+  // $('#navbar').show()
+  $('#unAuthedView').hide()
+  $('#authedView').show()
+  // console.log('signInSuccess ran. Data is :', data)
   $('#username').html(`Welcome back ${data.user.email}`)
   const time = Date.parse(data.user.created_at)
   const timePassed = Date.now() - time
@@ -67,9 +68,9 @@ const changePasswordFailure = () => {
 const signOutSuccess = () => {
   // console.log('signOutSuccess ran.')
   store.user.token = []
-  $('#username').html('Username')
-  $('#navbar').hide()
-  $('#to-start').show()
+  $('#bgVideo').css('display', 'block')
+  $('#authedView').hide()
+  $('#unAuthedView').show()
 }
 
 const signOutFailure = (error) => {
@@ -78,14 +79,18 @@ const signOutFailure = (error) => {
 }
 
 const deleteSuccess = () => {
-  console.log('deleteSuccess ran')
+  $('#bgVideo').css('display', 'block')
+  $('#authedView').hide()
+  $('#unAuthedView').show()
+  $('#unAuthedMessage').html('Sorry to see you go')
 }
+
 const deleteFailure = error => {
   $('#authedMessage').html(`Sorry, account deletion was unsuccessful. Try again. Error is ${error}`)
 }
 
 const updateFitnessSuccess = () => {
-  console.log('updateFitnessSuccess ran')
+  $('#authedMessage').html(`Fitness updated`)
 }
 
 const updateFitnessFailure = error => {
