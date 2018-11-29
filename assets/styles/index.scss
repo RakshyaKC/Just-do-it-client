@@ -6,7 +6,9 @@ $font-color: #6c7d93;
 $overlay-color: rgba(220, 244, 244, 0.6);
 
 body {
-  background-color: $background-color;
+  // background-color: $background-color;
+  background-image: url(backgroundVideo.gif);
+  background-size: cover;
   font-family: 'Vollkorn', serif;
 }
 
