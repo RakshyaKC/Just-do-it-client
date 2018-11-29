@@ -53,8 +53,15 @@ const onUpdateFitness = event => {
   // console.log('function onUpdateFitnes')
   const option = $('#option2').text()
   console.log(option)
-  // if store.user.fitness is not equal to option 2
-  if (store.user.fitness !== $('#option2').text()) {
+  // if store.user.fitness is equal to option 2
+  /// ///// TEST CODE TO SEE HOW ALL LEVELS CAN BE CHANGED
+  // if (store.user.fitness === $('#option2').text()) {
+  //   api.updateFitness(event.target.value)
+  //     .then(ui.updateFitnessSuccess)
+  //     .catch(ui.updateFitnessFailure)
+  // }
+  /// ///// TEST CODE TO SEE HOW ALL LEVELS CAN BE CHANGED
+  if (event.target.value !== store.user.fitness) {
     api.updateFitness(event.target.value)
       .then(ui.updateFitnessSuccess)
       .catch(ui.updateFitnessFailure)

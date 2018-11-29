@@ -35,8 +35,8 @@ const signInSuccess = data => {
   store.user = data.user
   resetSignIn()
   hideBackgroundVideo()
+  console.log(data.user.fitness)
   $('#unAuthedMessage').html('')
-  // $('#navbar').show()
   $('#unAuthedView').hide()
   $('#authedView').show()
   // console.log('signInSuccess ran. Data is :', data)
