@@ -33,8 +33,14 @@ const fortyfiveMinAllFailure = (error) => {
   console.log('fortyfiveyMinAllFailure ran. Error is :', error)
 }
 
-const fortyfiveMinIntSuccess = () => {
+const fortyfiveMinIntSuccess = (data) => {
   console.log(`let's watch the 45 min Int levels video`)
+  console.log(data.videos)
+  const url = data.videos[0].url
+  console.log(url)
+  $('#workout-video').attr('src', url)
+  $('#time').hide()
+  $('#startWorkout').show()
 }
 
 const fortyfiveMinIntFailure = (error) => {

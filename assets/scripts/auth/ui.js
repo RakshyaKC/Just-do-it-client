@@ -68,14 +68,18 @@ const changePasswordFailure = () => {
 const signOutSuccess = () => {
   // console.log('signOutSuccess ran.')
   store.user.token = []
+  $('#startWorkout').hide()
+  $('#time').show('')
   $('#bgVideo').css('display', 'block')
   $('#authedView').hide()
   $('#unAuthedView').show()
+  $('#authedMessage').html('')
+  $('#unAuthedMessage').html('')
 }
 
 const signOutFailure = (error) => {
   $('#authedMessage').html(`Sorry, sign out was unsuccessful. Try again.`)
-  console.log('signOutFailure ran. Error is :', error)
+  // console.log('signOutFailure ran. Error is :', error)
 }
 
 const deleteSuccess = () => {

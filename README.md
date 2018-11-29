@@ -33,19 +33,13 @@ The videoEmbeddable parameter lets you to restrict a search to only videos that 
 https://developers.google.com/apis-explorer/#p/youtube/v3/youtube.search.list?part=snippet&maxResults=25&q=surfing
 
 11/29
-* Delete input box from account dropdown
-* Delete update button
-* Moved change password out of account drop down
-* Disabled background gif upon sign in
-* Make sure front end is interacting with backend upon deployment
-* Changed auth and unauth view
-
+* Feedback for change password, unsuccessful sign in, unsuccessful sign out, update fitness
 
 To do
-*** Feedback for change password, unsuccessful sign in, unsuccessful sign out, update fitness
-*** Maybe use bootstrap notify for authedMessage
-*** Start workout only when api calls have been made
-*** embed json files
 *** Add 2-3 resources for the 6 video types. Total (12-18)
+*** embed json files
+*** Start workout only when api calls have been made
 *** Add ui success and failure for all video events. Total - 12 functions
 *** Remove all console.logs
+*** Sign out success should reset the whole website i.e. Should go back to showing unauth view.
+*** Maybe use bootstrap notify for authedMessage
