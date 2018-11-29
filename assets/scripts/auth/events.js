@@ -40,23 +40,23 @@ const onSignOut = event => {
 
 const onDeleteAccount = event => {
   event.preventDefault()
-  $('#delete-modal').modal('show')
   api.deleteAccount()
     .then(ui.deleteSuccess)
     .catch(ui.deleteFailure)
 }
 
 const onUpdateFitness = event => {
+  console.log(event)
   event.preventDefault()
   console.log(store.user.fitness)
-  console.log('function onUpdateFitnes')
-  const option = $('#option2').text()
-  console.log(option)
-  if (store.user.fitness === $('#option2').text()) {
-    api.updateFitness()
-      .then(ui.updateFitnessSuccess)
-      .catch(ui.updateFitnessFailure)
-  }
+  console.log(event.target.value)
+  // console.log('function onUpdateFitnes')
+  // const option = $('#option2').text()
+  // console.log(option)
+  // if (store.user.fitness === $('#option2').text()) {
+  api.updateFitness(event.target.value)
+    .then(ui.updateFitnessSuccess)
+    .catch(ui.updateFitnessFailure)
 }
 
 module.exports = {

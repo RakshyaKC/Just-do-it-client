@@ -27,29 +27,24 @@ const signUpFailure = () => {
   resetSignUp()
 }
 
+const hideBackgroundVideo = () => {
+  $('bgVideo').remove()
+}
+
 const signInSuccess = data => {
   store.user = data.user
   resetSignIn()
+  hideBackgroundVideo()
   $('#unAuthedMessage').html('')
   $('#navbar').show()
   $('#to-start').hide()
   console.log('signInSuccess ran. Data is :', data)
   $('#username').html(`Welcome back ${data.user.email}`)
-  $('#update-fitness').find(':selected').text(data.user.fitness)
-  const time = Date.parse(store.user.created_at)
+  const time = Date.parse(data.user.created_at)
   const timePassed = Date.now() - time
   const numDays = Math.round(timePassed / (24 * 60 * 60 * 1000))
   $('#account-age').html(`You started this journey ${numDays} days ago.`)
-  if (store.user.fitness === 'Intermediate') {
-    $('#option1').text('Intermediate')
-    $('#option2').text('All levels')
-  } else if (store.user.fitness === 'All levels') {
-    $('#option1').text('All levels')
-    $('#option2').text('Intermediate')
-  } else {
-    $('#option1').text('All levels')
-    $('#option2').text('Intermediate')
-  }
+  $('#select-fitness').val(data.user.fitness)
 }
 
 const signInFailure = () => {
@@ -85,16 +80,16 @@ const signOutFailure = (error) => {
 const deleteSuccess = () => {
   console.log('deleteSuccess ran')
 }
-const deleteFailure = () => {
-  console.log('deleteFailure ran')
+const deleteFailure = error => {
+  $('#authedMessage').html(`Sorry, account deletion was unsuccessful. Try again. Error is ${error}`)
 }
 
 const updateFitnessSuccess = () => {
   console.log('updateFitnessSuccess ran')
 }
 
-const updateFitnessFailure = () => {
-  console.log('updateFitnessFailure ran')
+const updateFitnessFailure = error => {
+  $('#authedMessage').html(`Sorry, your fitness couldn't be updated. Try again. Error is ${error}`)
 }
 
 module.exports = {

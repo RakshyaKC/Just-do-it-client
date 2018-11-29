@@ -14,9 +14,10 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
+  $('#delete').on('click', () => $('#delete-modal').modal('show'))
   $('#delete-account').on('click', authEvents.onDeleteAccount)
   // fitness level update handler
-  $('#update-fitness').on('submit', authEvents.onUpdateFitness)
+  $('#select-fitness').on('change', authEvents.onUpdateFitness)
   // video access event handlers
   $('#thirty-min').on('click', videoEvents.onThirtyMin)
   $('#fortyfive-min').on('click', videoEvents.onFortyfiveMin)

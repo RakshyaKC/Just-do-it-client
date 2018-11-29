@@ -16,7 +16,7 @@
       <div id="unAuthedView">
         <!-- The video -->
         <video autoplay muted loop id="backgroundVideo">
-          <source src="backgroundVideo.mp4" type="video/mp4" alt="backgroundVideo">
+          <!-- <source src="backgroundVideo.mp4" type="video/mp4" alt="backgroundVideo" id="bgVideo"> -->
         </video>
 
         <div id="to-start">
@@ -69,9 +69,9 @@
                       <li id="fitness-level">Your fitness level is </li>
                       <form id="update-fitness">
                         <input list="fitness" name="fitness">
-                        <select>
-                          <option id="option1">All levels</option>
-                          <option id="option2">Intermediate</option>
+                        <select id="select-fitness">
+                          <option id="option1" value="All levels">All levels</option>
+                          <option id="option2" value="Intermediate">Intermediate</option>
                         </select>
                         <button class="btn btn-info">Update</button>
                       </form>
