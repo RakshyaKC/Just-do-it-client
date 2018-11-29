@@ -20,42 +20,43 @@
             <img src='https://media.giphy.com/media/iBiQezf5ZNTmwNVHsl/giphy.gif' id='bgVideo'/>
         </div>
 
-        <div id="to-start">
-          <h4>Let's get you started</h4>
-          <h6 id="unAuthedMessage"></h6>
-          <!-- sign up form-->
-          <div class="btn-group dropup">
-              <button type="button" class="btn btn-default dropup-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Create an account
-              </button>
-              <div class="dropdown-menu">
-                <form id="sign-up" class="forms">
-                  <input name="credentials[email]" type="text" placeholder="Email address" class="form-control">
-                  <input name="credentials[password]" type="password" placeholder="Password" class="form-control">
-                  <input name="credentials[password_confirmation]" type="password" placeholder="Confirm password" class="form-control">
-                  <input name="credentials[fitness]" type="text" placeholder="Fitness level" class="form-control">
-                  <p>Enter 'All levels' or 'Intermediate'</p>
-                  <button class="btn btn-info">Sign Up</button>
-                </form>
+        <div class="to-start">
+          <div class="form-container">
+            <h4>Let's get you started</h4>
+            <h6 id="unAuthedMessage"></h6>
+            <!-- sign up form-->
+            <div class="btn-group dropdown">
+                <button type="button" class="btn dropup-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Create an account
+                </button>
+                <div class="dropdown-menu">
+                  <form id="sign-up" class="forms">
+                    <input name="credentials[email]" type="text" placeholder="Email address" class="form-control">
+                    <input name="credentials[password]" type="password" placeholder="Password" class="form-control">
+                    <input name="credentials[password_confirmation]" type="password" placeholder="Confirm password" class="form-control">
+                    <input name="credentials[fitness]" type="text" placeholder="Fitness level" class="form-control">
+                    <p>Enter 'All levels' or 'Intermediate'</p>
+                    <button class="form-btn">Sign Up</button>
+                  </form>
+              </div>
             </div>
-          </div>
           <!-- sign in form -->
-          <div class="btn-group dropup">
-            <button type="button" class="btn btn-default dropup-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="btn-group dropdown">
+            <button type="button" class="btn dropup-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Have an account?
             </button>
             <div class="dropdown-menu">
               <form id="sign-in" class="forms">
                 <input name="credentials[email]" type="text" placeholder="Email address" class="form-control">
                 <input name="credentials[password]" type="password" placeholder="Password" class="form-control">
-                <button class="btn btn-info">Sign in</button>
+                <button class="form-btn">Sign in</button>
               </form>
             </div>
           </div>
           <!-- Use a button to pause/play the video with JavaScript -->
         </div>
     </div>
-
+  </div>
     <!-- once logged in-->
       <div id="authedView">
         <h5 id="authedMessage"></h5>

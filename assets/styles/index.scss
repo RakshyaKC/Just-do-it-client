@@ -3,8 +3,8 @@
 
 $background-color: #ffffff;
 // #d8cfcf;
-$font-color: #6c7d93;
-$overlay-color: rgba(220, 244, 244, 0.6);
+$font-color: #4e5a6a;
+$overlay-color: rgba(220, 244, 244, 0.3);
 
 body {
   background-attachment: fixed;
@@ -31,12 +31,33 @@ body {
   }
 }
 
-#to-start {
-  background: $overlay-color;
-  bottom: 0;
-  padding: 10px;
-  position: fixed;
-  width: 100%;
+.to-start {
+  align-items: center;
+  bottom: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  margin: auto;
+  padding: 20px;
+  position: relative;
+  top: 50%;
+  width: 100vw;
+}
+
+.form-container {
+  background-color: $overlay-color;
+  border-style: double;
+  padding: 30px;
+}
+
+.form-btn {
+  align-self: center;
+  background-color: $overlay-color;
+  display: flex;
+  justify-content: center;
+  margin: 0.3em;
+  padding: 0.5em;
 }
 
 .forms {
@@ -65,12 +86,17 @@ p {
   text-align: center;
 }
 
-.dropup:hover .dropdown-menu {
-  display: block;
+.dropup-toggle {
+  background-color: $overlay-color;
+}
+
+.dropdown {
+  background-color: $overlay-color;
 }
 
 .dropdown:hover .dropdown-menu {
   display: block;
+  background-color: $overlay-color;
 }
 
 .time-availability {
@@ -89,6 +115,10 @@ p {
   align-content: center;
   display: flex;
   margin: 1em;
+}
+
+#sign-out {
+  background-color: $overlay-color;
 }
 
 #workout-video {
