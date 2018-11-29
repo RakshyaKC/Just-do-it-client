@@ -16,7 +16,7 @@
       <div id="unAuthedView">
         <!-- The video -->
         <video autoplay muted loop id="backgroundVideo">
-          <!-- <source src="backgroundVideo.mp4" type="video/mp4" alt="backgroundVideo"> -->
+          <source src="backgroundVideo.mp4" type="video/mp4" alt="backgroundVideo">
         </video>
 
         <div id="to-start">
@@ -28,23 +28,10 @@
               </button>
               <div class="dropdown-menu">
                 <form id="sign-up" class="forms">
-                  <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input name="credentials[email]" type="text" placeholder="Email address" class="form-control">
-                  </div>
-                  <div class="input-group">
-                    <input name="credentials[password]" type="password" placeholder="Password" class="form-control">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                  </div>
-                  <div class="input-group">
-                    <span class="input-group-addon">
-                      <i class="glyphicon glyphicon-lock"></i>
-                    </span>
-                    <input name="credentials[password_confirmation]" type="password" placeholder="Confirm password" class="form-control">
-                  </div>
-                  <div class="input-group">
-                    <input name="credentials[fitness]" type="text" placeholder="Fitness level" class="form-control">
-                  </div>
+                  <input name="credentials[email]" type="text" placeholder="Email address" class="form-control">
+                  <input name="credentials[password]" type="password" placeholder="Password" class="form-control">
+                  <input name="credentials[password_confirmation]" type="password" placeholder="Confirm password" class="form-control">
+                  <input name="credentials[fitness]" type="text" placeholder="Fitness level" class="form-control">
                   <p>Enter 'All levels' or 'Intermediate'</p>
                   <button class="btn btn-info">Sign Up</button>
                 </form>
@@ -57,14 +44,8 @@
             </button>
             <div class="dropdown-menu">
               <form id="sign-in" class="forms">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                  <input name="credentials[email]" type="text" placeholder="Email address" class="form-control">
-                </div>
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                  <input name="credentials[password]" type="password" placeholder="Password" class="form-control">
-                </div>
+                <input name="credentials[email]" type="text" placeholder="Email address" class="form-control">
+                <input name="credentials[password]" type="password" placeholder="Password" class="form-control">
                 <button class="btn btn-info">Sign in</button>
               </form>
             </div>
@@ -85,18 +66,17 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <ul id="user-account">
                       <li id="username">Username</li>
-                      <li>Update fitness level here</li>
-                      <form>
+                      <li id="fitness-level">Your fitness level is </li>
+                      <form id="update-fitness">
                         <input list="fitness" name="fitness">
-                          <datalist id="update-fitness">
-                            <option value="All levels">
-                            <option value="Intermediate">
-                            <!-- <option id="option1" name="fitness[old]" value="All levels"></option>
-                            <option id="option2" name="fitness[new]" value="Intermediate"></option> -->
-                          </datalist>
-                          <input type="submit">
+                        <select>
+                          <option id="option1">All levels</option>
+                          <option id="option2">Intermediate</option>
+                        </select>
+                        <button class="btn btn-info">Update</button>
                       </form>
-                      <li id="account-age">Account age</li>
+
+                      <li id="account-age"></li>
                       <li class="nav-item dropdown">
                           <form id="change-password" class="forms">
                             <input type="password" name="passwords[old]" placeholder="Old password" class="form-control">
@@ -127,7 +107,8 @@
       <!-- Workout view -->
       <div id="startWorkout">
         <h5>Take a deep breath and yoga!</h5>
-        <iframe id="workout-video" width="700" height="450" src=""></iframe>
+        <!-- <iframe id="workout-video" width="700" height="450" src=""></iframe> -->
+        <iframe id="workout-video" width="560" height="315" src="https://www.youtube.com/embed/GLy2rYHwUqY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <!--Modals  -->
       <div class="modal" tabindex="-1" role="dialog" id="delete-modal">

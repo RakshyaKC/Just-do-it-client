@@ -40,10 +40,10 @@ const signInSuccess = data => {
   const timePassed = Date.now() - time
   const numDays = Math.round(timePassed / (24 * 60 * 60 * 1000))
   $('#account-age').html(`You started this journey ${numDays} days ago.`)
-  if (data.user.fitness === 'Intermediate') {
+  if (store.user.fitness === 'Intermediate') {
     $('#option1').text('Intermediate')
     $('#option2').text('All levels')
-  } else if (data.user.fitness === 'All levels') {
+  } else if (store.user.fitness === 'All levels') {
     $('#option1').text('All levels')
     $('#option2').text('Intermediate')
   } else {

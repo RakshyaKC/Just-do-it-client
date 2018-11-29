@@ -47,6 +47,7 @@ const onDeleteAccount = event => {
 }
 
 const onUpdateFitness = event => {
+  event.preventDefault()
   console.log(store.user.fitness)
   console.log('function onUpdateFitnes')
   const option = $('#option2').text()

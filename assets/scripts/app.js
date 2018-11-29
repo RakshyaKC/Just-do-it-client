@@ -16,7 +16,7 @@ $(() => {
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#delete-account').on('click', authEvents.onDeleteAccount)
   // fitness level update handler
-  $('#update-fitness').on('change', authEvents.onUpdateFitness)
+  $('#update-fitness').on('submit', authEvents.onUpdateFitness)
   // video access event handlers
   $('#thirty-min').on('click', videoEvents.onThirtyMin)
   $('#fortyfive-min').on('click', videoEvents.onFortyfiveMin)
