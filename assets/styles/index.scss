@@ -1,19 +1,17 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Vollkorn:400,600');
 
-$background-color: #d8cfcf;
+$background-color: #f7f7f7;
+// #d8cfcf;
 $font-color: #6c7d93;
 $overlay-color: rgba(220, 244, 244, 0.6);
 
 body {
+  background-attachment: fixed;
   background-color: $background-color;
-  // background-attachment: fixed;
-  // background-image: url('backgroundVideo.gif');
-  // background-repeat: no-repeat;
+  background-position: bottom;
   // background-size: 100%;
   // font-family: 'Vollkorn', serif;
-  // height: 100%;
-  // width: 100%;
 }
 
 #authedView {
@@ -44,6 +42,13 @@ body {
 }
 
 .input-group {
+  position: relative;
+}
+
+#picture {
+  background-image: url('http://lq-audio.com/wp-content/uploads/bird-of-paradise-large-norden-goods-terracotta-13-birds-indoor-plant.jpg');
+  bottom: 0;
+  height: 400px;
   position: relative;
 }
 
