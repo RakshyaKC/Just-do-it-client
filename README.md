@@ -17,8 +17,8 @@ User account
 
 Video access
 * User can enter their time availability.
-*** User can see a youtube video link.
-*** Maybe user can play the video in the app itself.
+* User can play the video in the app itself.
+* User will get a random video from the manual database.
 *** User will not see the same video twice ....in a row(if the database is made manually)
 
 
@@ -34,12 +34,12 @@ https://developers.google.com/apis-explorer/#p/youtube/v3/youtube.search.list?pa
 
 11/29
 * Feedback for change password, unsuccessful sign in, unsuccessful sign out, update fitness
+* Add 2-3 resources for the 6 video types. Total (12-18)
+* Start workout div shows only when api calls have been made
+* Parsed json files sent from the backend to populate iframe with a random YouTube embed link that is the correct time length.
+* Added ui success and failure for all video events. Total - 12 functions
 
 To do
-*** Add 2-3 resources for the 6 video types. Total (12-18)
-*** embed json files
-*** Start workout only when api calls have been made
-*** Add ui success and failure for all video events. Total - 12 functions
+*** Figure out how to use the latest data.user.fitness if user changes their fitness level prior to watching video.
 *** Remove all console.logs
-*** Sign out success should reset the whole website i.e. Should go back to showing unauth view.
 *** Maybe use bootstrap notify for authedMessage

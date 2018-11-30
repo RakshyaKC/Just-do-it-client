@@ -2,77 +2,121 @@
 // const store = require('../store.js')
 
 const thirtyMinAllSuccess = function (data) {
+  console.log(data)
+  const videos = data.videos
+  console.log(videos)
+  const randomUrl = videos[Math.floor(Math.random() * videos.length)].url
+  console.log(`I am the random value: ${randomUrl}`)
   console.log('watch this 30 min all levels video')
   // will need to randomly select one of the object
-  console.log(data.videos)
-  const url = data.videos[0].url
-  console.log(url)
-  $('#workout-video').attr('src', url)
-}
-const thirtyMinAllFailure = (error) => {
-  console.log('thirtyMinAllFailure ran. Error is :', error)
-}
-
-const thirtyMinIntSuccess = function (data) {
-  console.log('watch this 30 min intermediate video')
-  // will need to randomly select one of the object
-  console.log(data.videos)
-  const url = data.videos[0].url
-  console.log(url)
-}
-
-const thirtyMinIntFailure = (error) => {
-  console.log('thirtyMinIntFailure ran. Error is :', error)
-}
-// Need 4 for each type. Total
-const fortyfiveMinAllSuccess = (data) => {
-  console.log(`let's watch the 45 min All levels video`)
-  console.log(data)
-}
-const fortyfiveMinAllFailure = (error) => {
-  console.log('fortyfiveyMinAllFailure ran. Error is :', error)
-}
-
-const fortyfiveMinIntSuccess = (data) => {
-  console.log(`let's watch the 45 min Int levels video`)
-  console.log(data.videos)
-  const url = data.videos[0].url
-  console.log(url)
-  $('#workout-video').attr('src', url)
+  $('#workout-video').attr('src', randomUrl)
   $('#time').hide()
   $('#startWorkout').show()
 }
 
-const fortyfiveMinIntFailure = (error) => {
-  console.log('fortyfiveyMinIntFailure ran. Error is :', error)
+const thirtyMinIntSuccess = function (data) {
+  console.log(data)
+  const videos = data.videos
+  const randomUrl = videos[Math.floor(Math.random() * videos.length)].url
+  console.log(`I am the random value: ${randomUrl}`)
+  $('#workout-video').attr('src', randomUrl)
+  $('#time').hide()
+  $('#startWorkout').show()
 }
+
+const fortyfiveMinAllSuccess = (data) => {
+  console.log(`let's watch the 45 min All levels video`)
+  console.log(data)
+  const videos = data.videos
+  const randomUrl = videos[Math.floor(Math.random() * videos.length)].url
+  console.log(`I am the random value: ${randomUrl}`)
+  $('#workout-video').attr('src', randomUrl)
+  $('#time').hide()
+  $('#startWorkout').show()
+}
+
+const fortyfiveMinIntSuccess = (data) => {
+  console.log(data)
+  const videos = data.videos
+  console.log(videos)
+  const randomUrl = videos[Math.floor(Math.random() * videos.length)].url
+  console.log(`I am the random value: ${randomUrl}`)
+  console.log(`let's watch the 45 min Int levels video`)
+  $('#workout-video').attr('src', randomUrl)
+  $('#time').hide()
+  $('#startWorkout').show()
+}
+
 const sixtyMinAllSuccess = (data) => {
   console.log(`let's watch the 60 min All levels video`)
   console.log(data)
-}
-const sixtyMinAllFailure = (error) => {
-  console.log('sixtyMinAllFailure ran. Error is :', error)
+  const videos = data.videos
+  console.log(videos)
+  const randomUrl = videos[Math.floor(Math.random() * videos.length)].url
+  console.log(`I am the random value: ${randomUrl}`)
+  console.log(`let's watch the 45 min Int levels video`)
+  $('#workout-video').attr('src', randomUrl)
+  $('#time').hide()
+  $('#startWorkout').show()
 }
 
 const sixtyMinIntSuccess = (data) => {
   console.log(`let's watch the 60 min Intermediate level video`)
   console.log(data)
+  const videos = data.videos
+  console.log(videos)
+  const randomUrl = videos[Math.floor(Math.random() * videos.length)].url
+  console.log(`I am the random value: ${randomUrl}`)
+  console.log(`let's watch the 45 min Int levels video`)
+  $('#workout-video').attr('src', randomUrl)
+  $('#time').hide()
+  $('#startWorkout').show()
 }
-const sixtyMinIntFailure = (error) => {
-  console.log('sixtyMinIntFailure ran. Error is :', error)
+
+// Failure ui handlers below here
+
+const thirtyMinAllFailure = () => {
+  $('#authedMessage').html(`Sorry we couldn't retrieve the video you asked for. Please try again`)
+  // console.log('thirtyMinAllFailure ran. Error is :', error)
+}
+
+const thirtyMinIntFailure = () => {
+  $('#authedMessage').html(`Sorry we couldn't retrieve the video you asked for. Please try again`)
+  // console.log('thirtyMinIntFailure ran. Error is :', error)
+}
+
+const fortyfiveMinAllFailure = () => {
+  $('#authedMessage').html(`Sorry we couldn't retrieve the video you asked for. Please try again`)
+  // console.log('fortyfiveyMinAllFailure ran. Error is :', error)
+}
+
+const fortyfiveMinIntFailure = () => {
+  $('#authedMessage').html(`Sorry we couldn't retrieve the video you asked for. Please try again`)
+  // console.log('fortyfiveyMinIntFailure ran. Error is :', error)
+}
+
+const sixtyMinAllFailure = () => {
+  $('#authedMessage').html(`Sorry we couldn't retrieve the video you asked for. Please try again`)
+  // console.log('sixtyMinAllFailure ran. Error is :', error)
+}
+
+const sixtyMinIntFailure = () => {
+  $('#authedMessage').html(`Sorry we couldn't retrieve the video you asked for. Please try again`)
+  // console.log('sixtyMinIntFailure ran. Error is :', error)
 }
 
 module.exports = {
   thirtyMinAllSuccess,
-  thirtyMinAllFailure,
   thirtyMinIntSuccess,
-  thirtyMinIntFailure,
   fortyfiveMinAllSuccess,
-  fortyfiveMinAllFailure,
   fortyfiveMinIntSuccess,
-  fortyfiveMinIntFailure,
   sixtyMinAllSuccess,
-  sixtyMinAllFailure,
   sixtyMinIntSuccess,
+  // failure messages below
+  thirtyMinAllFailure,
+  thirtyMinIntFailure,
+  fortyfiveMinAllFailure,
+  fortyfiveMinIntFailure,
+  sixtyMinAllFailure,
   sixtyMinIntFailure
 }
