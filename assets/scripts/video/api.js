@@ -3,6 +3,7 @@ const config = require('../config.js')
 const store = require('../store.js')
 
 const thirtyMinAll = data => {
+  console.log('api.thirtyMinAll running')
   return $.ajax({
     url: config.apiUrl + `/videos/thirty/alllevels`,
     method: 'GET',
@@ -13,6 +14,7 @@ const thirtyMinAll = data => {
 }
 
 const thirtyMinInt = data => {
+  console.log('api.thirtyMinAll running')
   return $.ajax({
     url: config.apiUrl + `/videos/thirty/intermediate`,
     method: 'GET',
@@ -23,7 +25,7 @@ const thirtyMinInt = data => {
 }
 
 const fortyfiveMinAll = () => {
-  console.log('FortyfiveMinAll running')
+  console.log('api.FortyfiveMinAll running')
   return $.ajax({
     url: config.apiUrl + `/videos/fortyfive/alllevels`,
     method: 'GET',
@@ -34,7 +36,7 @@ const fortyfiveMinAll = () => {
 }
 
 const fortyfiveMinInt = () => {
-  console.log('FortyfiveMinInt running')
+  console.log('api.FortyfiveMinInt running')
   return $.ajax({
     url: config.apiUrl + `/videos/fortyfive/intermediate`,
     method: 'GET',
@@ -45,7 +47,7 @@ const fortyfiveMinInt = () => {
 }
 
 const sixtyMinAll = () => {
-  console.log('SixtyMinAll running')
+  console.log('api.sixtyMinAll running')
   return $.ajax({
     url: config.apiUrl + `/videos/sixty/alllevels`,
     method: 'GET',
@@ -56,7 +58,7 @@ const sixtyMinAll = () => {
 }
 
 const sixtyMinInt = () => {
-  console.log('sixtyMinInt running')
+  console.log('api.sixtyMinInt running')
   return $.ajax({
     url: config.apiUrl + `/videos/sixty/intermediate`,
     method: 'GET',

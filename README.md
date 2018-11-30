@@ -32,14 +32,9 @@ The videoEmbeddable parameter lets you to restrict a search to only videos that 
 
 https://developers.google.com/apis-explorer/#p/youtube/v3/youtube.search.list?part=snippet&maxResults=25&q=surfing
 
-11/29
-* Feedback for change password, unsuccessful sign in, unsuccessful sign out, update fitness
-* Add 2-3 resources for the 6 video types. Total (12-18)
-* Start workout div shows only when api calls have been made
-* Parsed json files sent from the backend to populate iframe with a random YouTube embed link that is the correct time length.
-* Added ui success and failure for all video events. Total - 12 functions
+Commit
+* Stylistic changes
 
 To do
 *** Figure out how to use the latest data.user.fitness if user changes their fitness level prior to watching video.
 *** Remove all console.logs
-*** Maybe use bootstrap notify for authedMessage

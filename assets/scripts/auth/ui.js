@@ -27,14 +27,10 @@ const signUpFailure = () => {
   resetSignUp()
 }
 
-const hideBackgroundVideo = () => {
-  $('#bgVideo').css('display', 'none')
-}
-
 const signInSuccess = data => {
   store.user = data.user
   resetSignIn()
-  hideBackgroundVideo()
+  $('#bgVideo').css('display', 'none')
   console.log(data.user.fitness)
   $('#unAuthedMessage').html('')
   $('#unAuthedView').hide()
@@ -77,7 +73,7 @@ const signOutSuccess = () => {
   $('#unAuthedMessage').html('')
 }
 
-const signOutFailure = (error) => {
+const signOutFailure = () => {
   $('#authedMessage').html(`Sorry, sign out was unsuccessful. Try again.`)
   // console.log('signOutFailure ran. Error is :', error)
 }
@@ -93,8 +89,11 @@ const deleteFailure = error => {
   $('#authedMessage').html(`Sorry, account deletion was unsuccessful. Try again. Error is ${error}`)
 }
 
-const updateFitnessSuccess = () => {
+const updateFitnessSuccess = (event) => {
   $('#authedMessage').html(`Fitness updated`)
+  console.log(event)
+  store.fitness = event.user.fitness
+  console.log(store.fitness)
 }
 
 const updateFitnessFailure = error => {

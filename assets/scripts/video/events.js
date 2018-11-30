@@ -6,40 +6,50 @@ const store = require('../store.js')
 const onThirtyMin = event => {
   console.log('onThirtyMin running')
   // check data.user.fitness and direct appropriately
-  if (store.user.fitness === 'All levels') {
+  if (store.fitness == null) {
+    if (store.user.fitness === 'All levels') {
+      api.thirtyMinAll()
+        .then(ui.thirtyMinAllSuccess)
+        .catch(ui.thirtyMinAllFailure)
+    } else if (store.user.fitness === 'Intermediate') {
+      api.thirtyMinInt()
+        .then(ui.thirtyMinIntSuccess)
+        .catch(ui.thirtyMinIntFailure)
+    }
+  } else if (store.fitness === 'All levels') {
     api.thirtyMinAll()
-      .then(ui.thirtyMinAllSuccess, console.log(event))
+      .then(ui.thirtyMinAllSuccess)
       .catch(ui.thirtyMinAllFailure)
-  } else if (store.user.fitness === 'Intermediate') {
+  } else if (store.fitness === 'Intermediate') {
     api.thirtyMinInt()
-      .then(ui.thirtyMinIntSuccess, console.log(event))
+      .then(ui.thirtyMinIntSuccess)
       .catch(ui.thirtyMinIntFailure)
   }
 }
 // check above code before adding it to below functions
 
 const onFortyfiveMin = event => {
-  console.log('onFortyfiveMin running')
+  // console.log('onFortyfiveMin running')
   if (store.user.fitness === 'All levels') {
     api.fortyfiveMinAll()
-      .then(ui.fortyfiveMinAllSuccess, console.log(event))
+      .then(ui.fortyfiveMinAllSuccess)
       .catch(ui.fortyfiveMinAllFailure)
   } else if (store.user.fitness === 'Intermediate') {
     api.fortyfiveMinInt()
-      .then(ui.fortyfiveMinIntSuccess, console.log(event))
+      .then(ui.fortyfiveMinIntSuccess)
       .catch(ui.fortyfiveMinIntFailure)
   }
 }
 
 const onSixtyMin = event => {
-  console.log('onSixtyMin running')
+  // console.log('onSixtyMin running')
   if (store.user.fitness === 'All levels') {
     api.sixtyMinAll()
-      .then(ui.sixtyMinAllSuccess, console.log(event))
+      .then(ui.sixtyMinAllSuccess)
       .catch(ui.sixtyMinAllFailure)
   } else if (store.user.fitness === 'Intermediate') {
     api.sixtyMinInt()
-      .then(ui.sixtyMinIntSuccess, console.log(event))
+      .then(ui.sixtyMinIntSuccess)
       .catch(ui.sixtyMinIntFailure)
   }
 }

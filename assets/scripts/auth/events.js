@@ -4,6 +4,17 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 const store = require('../store.js')
 
+const toSignIn = event => {
+  event.preventDefault()
+  $('#sign-in').show()
+  $('#sign-up').hide()
+}
+const toSignUp = event => {
+  event.preventDefault()
+  $('#sign-in').hide()
+  $('#sign-up').show()
+}
+
 const onSignUp = event => {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -47,21 +58,18 @@ const onDeleteAccount = event => {
 
 const onUpdateFitness = event => {
   // console.log(event)
+  // console.log(event.target.value)
   event.preventDefault()
-  console.log(store.user.fitness)
-  console.log(event.target.value)
-  // console.log('function onUpdateFitnes')
-  const option = $('#option2').text()
-  console.log(option)
-  // if store.user.fitness is equal to option 2
-  /// ///// TEST CODE TO SEE HOW ALL LEVELS CAN BE CHANGED
-  // if (store.user.fitness === $('#option2').text()) {
-  //   api.updateFitness(event.target.value)
-  //     .then(ui.updateFitnessSuccess)
-  //     .catch(ui.updateFitnessFailure)
-  // }
-  /// ///// TEST CODE TO SEE HOW ALL LEVELS CAN BE CHANGED
-  if (event.target.value !== store.user.fitness) {
+  // If store.fitness has a value, then use below code
+  // if (store.fitness )
+  // console.log(`Is store.fitness empty?: ${store.fitness}`)
+  if (store.fitness == null) {
+    if (event.target.value !== store.user.fitness) {
+      api.updateFitness(event.target.value)
+        .then(ui.updateFitnessSuccess)
+        .catch(ui.updateFitnessFailure)
+    }
+  } else if (event.target.value !== store.fitness) {
     api.updateFitness(event.target.value)
       .then(ui.updateFitnessSuccess)
       .catch(ui.updateFitnessFailure)
@@ -69,6 +77,8 @@ const onUpdateFitness = event => {
 }
 
 module.exports = {
+  toSignIn,
+  toSignUp,
   onSignUp,
   onSignIn,
   onChangePassword,

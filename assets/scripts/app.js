@@ -9,6 +9,9 @@ const authEvents = require('./auth/events.js')
 const videoEvents = require('./video/events.js')
 
 $(() => {
+  // prior to authentication
+  $('#switch-to-sign-in').on('click', authEvents.toSignIn)
+  $('#switch-to-sign-up').on('click', authEvents.toSignUp)
   // authentication event handlers
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)

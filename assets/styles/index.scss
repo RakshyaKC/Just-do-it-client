@@ -12,9 +12,6 @@ body {
   background-image: url('https://ih1.redbubble.net/image.360595717.0414/flat,550x550,075,f.u6.jpg');
   background-position: 100% 100%;
   background-repeat: no-repeat;
-  // background-size: 800px;
-  //   position: relative;
-  // font-family: 'Vollkorn', serif;
 }
 
 #authedView {
@@ -29,6 +26,10 @@ body {
     right: 0;
     width: 100%;
   }
+}
+
+#sign-in {
+  display: none;
 }
 
 .to-start {
@@ -51,22 +52,25 @@ body {
   padding: 30px;
 }
 
-.form-btn {
+.btn-secondary {
   align-self: center;
   background-color: $overlay-color;
+  color: $font-color;
   display: flex;
+  font-family: 'Vollkorn', serif;
   justify-content: center;
   margin: 0.3em;
-  padding: 0.5em;
+  padding: 0.3em;
 }
 
 .forms {
   font-family: 'Vollkorn', serif;
-  padding: 0.5em;
-}
+  margin: 1em;
 
-.input-group {
-  position: relative;
+  .form-control {
+    background-color: $overlay-color;
+    margin: 0.3em;
+  }
 }
 
 h4,
@@ -97,6 +101,12 @@ p {
 .dropdown:hover .dropdown-menu {
   display: block;
   background-color: $overlay-color;
+}
+
+#select-fitness {
+  background-color: $overlay-color;
+  color: $font-color;
+  font-family: 'Vollkorn', serif;
 }
 
 .time-availability {
