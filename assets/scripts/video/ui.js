@@ -2,12 +2,12 @@
 // const store = require('../store.js')
 
 const thirtyMinAllSuccess = function (data) {
-  console.log(data)
+  // console.log(data)
   const videos = data.videos
-  console.log(videos)
+  // console.log(videos)
   const randomUrl = videos[Math.floor(Math.random() * videos.length)].url
-  console.log(`I am the random value: ${randomUrl}`)
-  console.log('watch this 30 min all levels video')
+  // console.log(`I am the random value: ${randomUrl}`)
+  // console.log('watch this 30 min all levels video')
   // will need to randomly select one of the object
   $('#workout-video').attr('src', randomUrl)
   $('#time').hide()
@@ -15,59 +15,59 @@ const thirtyMinAllSuccess = function (data) {
 }
 
 const thirtyMinIntSuccess = function (data) {
-  console.log(data)
+  // console.log(data)
   const videos = data.videos
   const randomUrl = videos[Math.floor(Math.random() * videos.length)].url
-  console.log(`I am the random value: ${randomUrl}`)
+  // console.log(`I am the random value: ${randomUrl}`)
   $('#workout-video').attr('src', randomUrl)
   $('#time').hide()
   $('#startWorkout').show()
 }
 
 const fortyfiveMinAllSuccess = (data) => {
-  console.log(`let's watch the 45 min All levels video`)
-  console.log(data)
+  // console.log(`let's watch the 45 min All levels video`)
+  // console.log(data)
   const videos = data.videos
   const randomUrl = videos[Math.floor(Math.random() * videos.length)].url
-  console.log(`I am the random value: ${randomUrl}`)
+  // console.log(`I am the random value: ${randomUrl}`)
   $('#workout-video').attr('src', randomUrl)
   $('#time').hide()
   $('#startWorkout').show()
 }
 
 const fortyfiveMinIntSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
   const videos = data.videos
-  console.log(videos)
+  // console.log(videos)
   const randomUrl = videos[Math.floor(Math.random() * videos.length)].url
-  console.log(`I am the random value: ${randomUrl}`)
-  console.log(`let's watch the 45 min Int levels video`)
+  // console.log(`I am the random value: ${randomUrl}`)
+  // console.log(`let's watch the 45 min Int levels video`)
   $('#workout-video').attr('src', randomUrl)
   $('#time').hide()
   $('#startWorkout').show()
 }
 
 const sixtyMinAllSuccess = (data) => {
-  console.log(`let's watch the 60 min All levels video`)
-  console.log(data)
+  // console.log(`let's watch the 60 min All levels video`)
+  // console.log(data)
   const videos = data.videos
-  console.log(videos)
+  // console.log(videos)
   const randomUrl = videos[Math.floor(Math.random() * videos.length)].url
-  console.log(`I am the random value: ${randomUrl}`)
-  console.log(`let's watch the 45 min Int levels video`)
+  // console.log(`I am the random value: ${randomUrl}`)
+  // console.log(`let's watch the 45 min Int levels video`)
   $('#workout-video').attr('src', randomUrl)
   $('#time').hide()
   $('#startWorkout').show()
 }
 
 const sixtyMinIntSuccess = (data) => {
-  console.log(`let's watch the 60 min Intermediate level video`)
-  console.log(data)
+  // console.log(`let's watch the 60 min Intermediate level video`)
+  // console.log(data)
   const videos = data.videos
-  console.log(videos)
+  // console.log(videos)
   const randomUrl = videos[Math.floor(Math.random() * videos.length)].url
-  console.log(`I am the random value: ${randomUrl}`)
-  console.log(`let's watch the 45 min Int levels video`)
+  // console.log(`I am the random value: ${randomUrl}`)
+  // console.log(`let's watch the 45 min Int levels video`)
   $('#workout-video').attr('src', randomUrl)
   $('#time').hide()
   $('#startWorkout').show()

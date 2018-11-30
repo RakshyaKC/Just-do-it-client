@@ -31,7 +31,7 @@ const signInSuccess = data => {
   store.user = data.user
   resetSignIn()
   $('#bgVideo').css('display', 'none')
-  console.log(data.user.fitness)
+  // console.log(data.user.fitness)
   $('#unAuthedMessage').html('')
   $('#unAuthedView').hide()
   $('#authedView').show()
@@ -91,9 +91,9 @@ const deleteFailure = error => {
 
 const updateFitnessSuccess = (event) => {
   $('#authedMessage').html(`Fitness updated`)
-  console.log(event)
+  // console.log(event)
   store.fitness = event.user.fitness
-  console.log(store.fitness)
+  // console.log(store.fitness)
 }
 
 const updateFitnessFailure = error => {

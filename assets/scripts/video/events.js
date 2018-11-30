@@ -4,7 +4,7 @@ const ui = require('./ui.js')
 const store = require('../store.js')
 
 const onThirtyMin = event => {
-  console.log('onThirtyMin running')
+  // console.log('onThirtyMin running')
   // check data.user.fitness and direct appropriately
   if (store.fitness == null) {
     if (store.user.fitness === 'All levels') {
