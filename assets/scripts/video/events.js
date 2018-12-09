@@ -35,20 +35,21 @@ const onFortyfiveMin = event => {
       api.fortyfiveMinAll()
         .then(ui.fortyfiveMinAllSuccess)
         .catch(ui.fortyfiveMinAllFailure)
-      } else if (store.user.fitness === 'Intermediate') {
-        api.fortyfiveMinInt()
-          .then(ui.fortyfiveMinIntSuccess)
-          .catch(ui.fortyfiveMinIntFailure)
-        }
-    } else if (store.fitness === 'All levels') {
-        api.fortyfiveMinAll()
-        .then(ui.fortyfiveMinAllSuccess)
-        .catch(ui.fortyfiveMinAllFailure)
-      } else if (store.fitness === 'Intermediate') {
-        api.fortyfiveMinInt()
+    } else if (store.user.fitness === 'Intermediate') {
+      api.fortyfiveMinInt()
+        .then(ui.fortyfiveMinIntSuccess)
+        .catch(ui.fortyfiveMinIntFailure)
+    }
+  } else if (store.fitness === 'All levels') {
+    api.fortyfiveMinAll()
+      .then(ui.fortyfiveMinAllSuccess)
+      .catch(ui.fortyfiveMinAllFailure)
+  } else if (store.fitness === 'Intermediate') {
+    api.fortyfiveMinInt()
       .then(ui.fortyfiveMinIntSuccess)
       .catch(ui.fortyfiveMinIntFailure)
-      }
+  }
+}
 
 const onSixtyMin = event => {
   // console.log('onSixtyMin running')
@@ -63,28 +64,30 @@ const onSixtyMin = event => {
         .catch(ui.sixtyMinIntFailure)
     }
   } else if (store.fitness === 'All levels') {
-      api.fortyfiveMinAll()
-        .then(ui.fortyfiveMinAllSuccess)
-        .catch(ui.fortyfiveMinAllFailure)
-    } else if (store.fitness === 'Intermediate') {
-      api.fortyfiveMinInt()
-        .then(ui.fortyfiveMinIntSuccess)
-        .catch(ui.fortyfiveMinIntFailure)
-    }
+    api.sixtyMinAll()
+      .then(ui.sixtyMinAllSuccess)
+      .catch(ui.sixtyMinAllFailure)
+  } else if (store.fitness === 'Intermediate') {
+    api.sixtyMinInt()
+      .then(ui.sixtyMinIntSuccess)
+      .catch(ui.sixtyMinIntFailure)
+  }
 }
 
-const createInvitation = () => {
-  const path = document.location.pathname
-  // path looks like: "/videos/intermediate/40"
-  const videoId = path.split('/')[3]
+const onCreateInvitation = () => {
+  event.preventDefault()
+  const videoId = store.currentVid.id
   const inviteeEmail = $('#invitee').val()
-  const postInvitation({invitee: inviteeEmail, video: videoId })
+  // const createInvitation ({ invitee: inviteeEmail, video: videoId })
+  // api call to Server
+  api.createInvitation({ invitee: inviteeEmail, video_id: videoId })
+    .then(ui.createInvitationSuccess)
+    .catch(ui.createInvitationFailure)
 }
-
 
 module.exports = {
   onThirtyMin,
   onFortyfiveMin,
   onSixtyMin,
-  createInvitation
+  onCreateInvitation
 }

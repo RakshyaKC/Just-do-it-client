@@ -127,6 +127,11 @@ p {
   margin: 1em;
 }
 
+#new-invitation {
+  display: inline-block;
+  margin: auto;
+}
+
 #sign-out {
   background-color: $overlay-color;
 }

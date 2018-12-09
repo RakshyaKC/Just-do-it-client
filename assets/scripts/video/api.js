@@ -68,9 +68,9 @@ const sixtyMinInt = () => {
   })
 }
 
-const postInvitation = (params) => {
+const createInvitation = (params) => {
   return $.ajax({
-    url: '/invitations',
+    url: config.apiUrl + '/invitations',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -86,5 +86,5 @@ module.exports = {
   fortyfiveMinInt,
   sixtyMinAll,
   sixtyMinInt,
-  postInvitation
+  createInvitation
 }

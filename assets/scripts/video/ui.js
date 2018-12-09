@@ -1,11 +1,13 @@
 'user strict'
-// const store = require('../store.js')
+const store = require('../store.js')
 
 const thirtyMinAllSuccess = function (data) {
   // console.log(data)
   const videos = data.videos
   // console.log(videos)
-  const randomUrl = videos[Math.floor(Math.random() * videos.length)].url
+  const currentVid = videos[Math.floor(Math.random() * videos.length)]
+  const randomUrl = currentVid.url
+  store.currentVid = currentVid
   // console.log(`I am the random value: ${randomUrl}`)
   // console.log('watch this 30 min all levels video')
   // will need to randomly select one of the object
@@ -17,8 +19,10 @@ const thirtyMinAllSuccess = function (data) {
 const thirtyMinIntSuccess = function (data) {
   // console.log(data)
   const videos = data.videos
-  const randomUrl = videos[Math.floor(Math.random() * videos.length)].url
   // console.log(`I am the random value: ${randomUrl}`)
+  const currentVid = videos[Math.floor(Math.random() * videos.length)]
+  const randomUrl = currentVid.url
+  store.currentVid = currentVid
   $('#workout-video').attr('src', randomUrl)
   $('#time').hide()
   $('#startWorkout').show()
@@ -28,8 +32,10 @@ const fortyfiveMinAllSuccess = (data) => {
   // console.log(`let's watch the 45 min All levels video`)
   // console.log(data)
   const videos = data.videos
-  const randomUrl = videos[Math.floor(Math.random() * videos.length)].url
   // console.log(`I am the random value: ${randomUrl}`)
+  const currentVid = videos[Math.floor(Math.random() * videos.length)]
+  const randomUrl = currentVid.url
+  store.currentVid = currentVid
   $('#workout-video').attr('src', randomUrl)
   $('#time').hide()
   $('#startWorkout').show()
@@ -39,7 +45,9 @@ const fortyfiveMinIntSuccess = (data) => {
   // console.log(data)
   const videos = data.videos
   // console.log(videos)
-  const randomUrl = videos[Math.floor(Math.random() * videos.length)].url
+  const currentVid = videos[Math.floor(Math.random() * videos.length)]
+  const randomUrl = currentVid.url
+  store.currentVid = currentVid
   // console.log(`I am the random value: ${randomUrl}`)
   // console.log(`let's watch the 45 min Int levels video`)
   $('#workout-video').attr('src', randomUrl)
@@ -52,7 +60,9 @@ const sixtyMinAllSuccess = (data) => {
   // console.log(data)
   const videos = data.videos
   // console.log(videos)
-  const randomUrl = videos[Math.floor(Math.random() * videos.length)].url
+  const currentVid = videos[Math.floor(Math.random() * videos.length)]
+  const randomUrl = currentVid.url
+  store.currentVid = currentVid
   // console.log(`I am the random value: ${randomUrl}`)
   // console.log(`let's watch the 45 min Int levels video`)
   $('#workout-video').attr('src', randomUrl)
@@ -65,12 +75,21 @@ const sixtyMinIntSuccess = (data) => {
   // console.log(data)
   const videos = data.videos
   // console.log(videos)
-  const randomUrl = videos[Math.floor(Math.random() * videos.length)].url
+  const currentVid = videos[Math.floor(Math.random() * videos.length)]
+  const randomUrl = currentVid.url
+  store.currentVid = currentVid
   // console.log(`I am the random value: ${randomUrl}`)
   // console.log(`let's watch the 45 min Int levels video`)
   $('#workout-video').attr('src', randomUrl)
   $('#time').hide()
   $('#startWorkout').show()
+}
+
+const createInvitationSuccess = (data) => {
+  console.log(data)
+  // store.videos = data.videos
+  // console.log('running createInvitationSuccess')
+  $('#authedMessage').html(`The user has been invited to join you in watching this video.`)
 }
 
 // Failure ui handlers below here
@@ -105,6 +124,12 @@ const sixtyMinIntFailure = () => {
   // console.log('sixtyMinIntFailure ran. Error is :', error)
 }
 
+const createInvitationFailure = () => {
+  // console.log('running createInvitationFailure')
+  // console.log(error)
+  $('#authedMessage').html(`This user does not have an account yet, but we have invited them to the site.`)
+}
+
 module.exports = {
   thirtyMinAllSuccess,
   thirtyMinIntSuccess,
@@ -112,11 +137,13 @@ module.exports = {
   fortyfiveMinIntSuccess,
   sixtyMinAllSuccess,
   sixtyMinIntSuccess,
+  createInvitationSuccess,
   // failure messages below
   thirtyMinAllFailure,
   thirtyMinIntFailure,
   fortyfiveMinAllFailure,
   fortyfiveMinIntFailure,
   sixtyMinAllFailure,
-  sixtyMinIntFailure
+  sixtyMinIntFailure,
+  createInvitationFailure
 }

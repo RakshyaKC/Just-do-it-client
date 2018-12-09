@@ -26,5 +26,5 @@ $(() => {
   $('#fortyfive-min').on('click', videoEvents.onFortyfiveMin)
   $('#sixty-min').on('click', videoEvents.onSixtyMin)
   // invitation event handler
-  $('#new-invitation').on('submit', videoEvents.createInvitation)
+  $('#new-invitation').on('submit', videoEvents.onCreateInvitation)
 })

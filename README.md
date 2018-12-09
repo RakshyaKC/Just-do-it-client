@@ -8,7 +8,6 @@ Authorization
 * User can sign in.
 * User can change password.
 * User can sign out.
-*** User shouldn't have to sign in right after signing up. Sign up should generate authorization token.
 
 
 User account
@@ -23,22 +22,33 @@ Video access
 * User can play the video in the app itself.
 * User will get a random video from the manual database.
 
+Social
+* User can create invites using friend's (invitee) email address
+* If invitee email is a registered user, an invitation to the specific workout video will be sent**
+* If database does not have invitee email, an email with introduction to
+  website will be sent**
+
+Process & Techonologies
+* HTML, Sass and bootstrap for markup and styling.
+* Used a gif for pre authorization background.
+* Used an image for post authorization background.
+* The website is minimal in look and has a clean feel to encourage serenity.
+* JavaScript and jQuery used to event handling.
+* AJAX calls are made to make requests to the backend.
+* The data from the server is captured in success & failure messages for functionality. For example, video url.
+* Randomized video url is used to populate an iframe tag to show an embedded video.
+
 
 FUTURE FEATURES
-Integration of YouTube api
-* videoDuration
-The videoDuration parameter filters video search results based on their duration. If you specify a value for this parameter, you must also set the type parameter's value to video. (string)
-
-* videoEmbeddable
-The videoEmbeddable parameter lets you to restrict a search to only videos that can be embedded into a webpage. If you specify a value for this parameter, you must also set the type parameter's value to video. (string)
-
-https://developers.google.com/apis-explorer/#p/youtube/v3/youtube.search.list?part=snippet&maxResults=25&q=surfing
-
-*** User will not see the same video twice ....in a row(if the database is made manually)
+* Invitations will generate email to invitee email addresses.
+* Non existing users will receive an email with introduction to the website and name of the inviter.
+* Friends can schedule workout at a certain time and will be sent reminder an
+hour prior to starting time
+* Users can enter quotes and sayings to set the 'studio space' mood
+* A token will be generated upon sign up so user doesn't have to sign in right
+after signing up.
+* User will not see the same video twice in a row(if the database is made manually)
+* User will be able add their own videos or workout routines.
 
 Commit
-
-
-To do
-*** Figure out how to use the latest data.user.fitness if user changes their fitness level prior to watching video.
-*** Remove all console.logs
+* updated the fitness change check on all three time availability.
