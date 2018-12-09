@@ -1,5 +1,8 @@
 Just Do it Client
 
+Server address https://boiling-fjord-48869.herokuapp.com/
+Front end address https://rakshyakc.github.io/Just-do-it-client/
+
 Authorization
 * User can sign up.
 * User can sign in.
@@ -19,7 +22,6 @@ Video access
 * User can enter their time availability.
 * User can play the video in the app itself.
 * User will get a random video from the manual database.
-*** User will not see the same video twice ....in a row(if the database is made manually)
 
 
 FUTURE FEATURES
@@ -32,8 +34,10 @@ The videoEmbeddable parameter lets you to restrict a search to only videos that 
 
 https://developers.google.com/apis-explorer/#p/youtube/v3/youtube.search.list?part=snippet&maxResults=25&q=surfing
 
+*** User will not see the same video twice ....in a row(if the database is made manually)
+
 Commit
-* Stylistic changes
+
 
 To do
 *** Figure out how to use the latest data.user.fitness if user changes their fitness level prior to watching video.
