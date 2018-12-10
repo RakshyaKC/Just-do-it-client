@@ -1,7 +1,14 @@
 Just Do it Client
 
+* Give user a new work out video based on their self assessed fitness level and time availability.
+
+
 Server address https://boiling-fjord-48869.herokuapp.com/
-Front end address https://rakshyakc.github.io/Just-do-it-client/
+Backend repo https://github.com/RakshyaKC/Just-do-it-rails-API
+Live site https://rakshyakc.github.io/Just-do-it-client/
+
+Wireframes - https://i.imgur.com/zMaZFEs.jpg
+User stories below!
 
 Authorization
 * User can sign up.
